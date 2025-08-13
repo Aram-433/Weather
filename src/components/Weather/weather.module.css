@@ -1,0 +1,18 @@
+.dashboard {
+  width: 450px;
+  height: 570px;
+  border-radius: 10px;
+  background-color: #463373;
+  padding: 30px 10px;
+  .message,
+  .sorry {
+    color: white;
+    font-size: 18px;
+  }
+  .tonight {
+    span {
+      color: white;
+      font-size: 25px;
+    }
+  }
+}
