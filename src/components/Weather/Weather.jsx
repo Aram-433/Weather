@@ -21,7 +21,15 @@ function Weather() {
     "Sunday",
   ];
   const day = new Date().getDay() - 1;
-  const daysForShow = weekDays.slice(day + 1);
+  let daysForShow = weekDays.slice(day);
+  if (7 - day >= 4) {
+    daysForShow = weekDays.slice(day, day + 4);
+  } else {
+    daysForShow = [
+      ...weekDays.slice(-7 + day),
+      ...weekDays.slice(0, Math.abs(7 - day - 3 - 1)),
+    ];
+  }
   const dayOfWeek = weekDays.find((elm, ind) => ind == day);
   useEffect(() => {
     fetch(
@@ -77,3 +85,4 @@ function Weather() {
 }
 
 export default Weather;
+
